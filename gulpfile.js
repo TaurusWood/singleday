@@ -3,9 +3,9 @@ var gulp = require('gulp'),
   autoprefixer = require('gulp-autoprefixer'),
   minifycss = require('gulp-minify-css'),
   // concat = require('gulp-concat'),
-  cache = require('gulp-cache'),
+  // cache = require('gulp-cache'),
   uglify = require('gulp-uglify'),
-  clean = require('gulp-clean'),
+  // clean = require('gulp-clean'),
   // del = require('del'),
   browserSync = require('browser-sync'),
   reload  = browserSync.reload;
@@ -33,10 +33,10 @@ gulp.task('minJs', function () {
     .pipe(reload({stream: true}))
 });
 
-gulp.task('clean', function () {
-  gulp.src(srcDir, { read:false })
-    .pipe(clean());
-});
+// gulp.task('clean', function () {
+//   gulp.src(srcDir, { read:false })
+//     .pipe(clean());
+// });
 
 
 gulp.task('server', ['styles', 'minJs', 'watch'], function() {

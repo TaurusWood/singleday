@@ -45,11 +45,11 @@
 
 body {
   background-color: rgba(252, 252, 228, 0.7);
-  font-family: "微软雅黑";
+  font-family:'PingFang SC','Microsoft YaHei','Hiragino Sans GB',Helvetica,Arial,'Lucida Grande',sans-serif;
+  margin: 0;
 }
 
 header {
-  text-align: center;
   .billboard {
     width: 100%;
     img {
@@ -62,33 +62,33 @@ header {
 .banner {
   margin: 0 auto;
   position: relative;
-  border: 5px solid rgb(252, 237, 206);
-  width: 600px;
-  height: 190px;
+  border: 0.05rem solid rgb(252, 237, 206);
+  width: 6rem;
+  height: 1.9rem;
   .square-color {
     display: block;
     position: absolute;
-    width: 5px;
-    height: 5px;
+    width: 0.05rem;
+    height: 0.05rem;
   }
   .square-color.tl {
-    top: -5px;
-    left: -5px;
+    top: -0.05rem;
+    left: -0.05rem;
     background-color: rgb(255, 214, 0);
   }
   .square-color.tr {
-    top: -5px;
-    right: -5px;
+    top: -0.05rem;
+    right: -0.05rem;
     background-color: rgb(28, 200, 166);
   }
   .square-color.bl {
-    bottom: -5px;
-    left: -5px;
+    bottom: -0.05rem;
+    left: -0.05rem;
     background-color: rgb(0, 120, 253);
   }
   .square-color.br {
-    bottom: -5px;
-    right: -5px;
+    bottom: -0.05rem;
+    right: -0.05rem;
     background-color: rgb(253, 3, 77);
   }
 }
@@ -102,10 +102,10 @@ header {
   }
   #box {
     position: absolute;
-    width: 3200px;
+    width: 32rem;
     .img{
-      width: 640px;
-      height: 190px;
+      width: 6rem;
+      height: 1.9rem;
       display: inline-block;
       float: left;
     }
@@ -116,6 +116,60 @@ header {
 .nav {
   width: 100%;
   background-color: @red;
-  height: 60px;
-  margin-top: 20px;
+  height: 30px;
+  margin-top: 0.2rem;
+}
+
+.parts-one {
+  width: 6rem;
+  margin: 0.2rem auto;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      .leaf {
+        width: 2.95rem;
+        height: 2.35rem;
+        margin-top: 0.2rem;
+        background-color: #fff;
+        border-top-left-radius: 0.3rem;
+        border-bottom-right-radius: 0.3rem;
+        position: relative;
+        &:first-child {
+          float: right;
+        }
+        &:last-child {
+          float: left;
+        }
+        img {
+          width: 100%;
+          height: 1.95rem;
+          border-top-left-radius: 0.3rem;
+        }
+        p.name {
+          position: absolute;
+          bottom:0.2rem;
+          width: 100%;
+          height: 0.3rem;
+          line-height: 0.3rem;
+          background-color: rgba(0,0,0,0.3);
+          color: #FFF;
+          font-size: 0.14rem;
+          text-align: center;
+        }
+        i.wallet {
+          position: absolute;
+          font-size: 0.12rem;
+          color: #FFF;
+        }
+        span.adverting {
+          color: @red;
+          font-size: 0.2rem;
+          margin-top: 0.2rem;
+          margin-left: 0.8rem;
+        }
+      }
+    }
+  }
 }
