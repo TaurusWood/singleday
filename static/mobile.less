@@ -1,0 +1,121 @@
+@pink: rgb(220,76,174);
+@red: rgb(229,36,41);
+@blue: rgb(71,186,230);
+@orange: rgb(239,123,64);
+@purple: rgb(165,110,240);
+@scarlet: rgb(244,97,90);
+@apricot: rgb(233,145,39);
+@skyBlue: rgb(84,164,235);
+@cyan:rgb(47,210,217);
+
+.color (@color) {
+  a {
+    background-color: @color;
+  }
+  .discount {
+    color: @color;
+  }
+}
+
+.parts-color (@color) {
+  .part-left-only {
+    .titles {
+      .inner {
+        b {
+          color: @color;
+        }
+      }
+    }
+    .part-top {
+      .item {
+        .inner {
+          .info {
+            background-color: @color;
+          }
+        }
+      }
+    }
+    .part-bottom {
+      .rectangle-special {
+        background-color: @color;
+      }
+    }
+  }
+}
+
+body {
+  background-color: rgba(252, 252, 228, 0.7);
+  font-family: "微软雅黑";
+}
+
+header {
+  text-align: center;
+  .billboard {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+// 轮播外框
+.banner {
+  margin: 0 auto;
+  position: relative;
+  border: 5px solid rgb(252, 237, 206);
+  width: 600px;
+  height: 190px;
+  .square-color {
+    display: block;
+    position: absolute;
+    width: 5px;
+    height: 5px;
+  }
+  .square-color.tl {
+    top: -5px;
+    left: -5px;
+    background-color: rgb(255, 214, 0);
+  }
+  .square-color.tr {
+    top: -5px;
+    right: -5px;
+    background-color: rgb(28, 200, 166);
+  }
+  .square-color.bl {
+    bottom: -5px;
+    left: -5px;
+    background-color: rgb(0, 120, 253);
+  }
+  .square-color.br {
+    bottom: -5px;
+    right: -5px;
+    background-color: rgb(253, 3, 77);
+  }
+}
+
+// 轮播功能
+#slider {
+  .box-container {
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+  }
+  #box {
+    position: absolute;
+    width: 3200px;
+    .img{
+      width: 640px;
+      height: 190px;
+      display: inline-block;
+      float: left;
+    }
+  }
+}
+
+// 导航栏
+.nav {
+  width: 100%;
+  background-color: @red;
+  height: 60px;
+  margin-top: 20px;
+}
