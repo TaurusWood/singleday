@@ -65,6 +65,7 @@ header {
     width: 100%;
     img {
       width: 100%;
+      height: auto;
     }
   }
 }
@@ -90,6 +91,15 @@ ul {
       }
     }
   }
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+p {
+  margin: 0.02rem 0;
 }
 
 // 轮播外框
@@ -349,43 +359,159 @@ ul {
 
 // 品牌部分
 .parts-brand {
-  .discount {
+  .billboards {
     width: 5.9rem;
-    margin-top: 20rem;
+    margin: 0.2rem auto;
     position: relative;
     a.item {
       display: block;
       width: 100%;
       height: 1.32rem;
+      margin-top: 0.2rem;
       color: #FFF;
-      .logo {
+      .left {
         width: 1.78rem;
-        height: 0.72rem;
-        display: inline-block;
+        height: 100%;
+        float: left;
         position: relative;
-        img {
+        .logo {
+          height: 0.72rem;
+          position: relative;
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: auto;
+          }
+        }
+        span.discount {
           position: absolute;
-          width: 100%;
-          top: 0;
+          bottom: 0;
+          left: 0;
+          width: 1.78rem;
+          height: 0.6rem;
+          line-height: 0.6rem;
+          font-size: 0.26rem;
+          text-align: center;
+          color: #FFF;
+        }
+      }
+      .right {
+        img.goods {
+          width: 1.8rem;
+          height: 1.24rem;
+          margin-top: 0.05rem;
+          margin-right: 0.1rem;
+          float: left;
+        }
+      }
+    }
+  }
+  ul {
+    margin-top: 0.3rem;
+    li {
+      .rectangle-special {
+        padding: 0.1rem;
+        position: relative;
+        text-align: right;
+        color: #FFF;
+        box-sizing: border-box;
+        img.logo {
+          float: right;
+          height: 0.45rem;
+          width: auto;
+        }
+        img.bg {
+          position: absolute;
+        }
+        img.wave-s {
+          right: 0;
+          top: 2rem;
+          width: 0.5rem;
+          height: 0.24rem;
+        }
+        img.wave-m {
+          right: 0.38rem;
+          top: 1.6rem;
+          width: 0.9rem;
+          height: 0.4rem;
+        }
+        img.wave-x {
+          top: .1rem;
+          left: .1rem;
+          width: 1.8rem;
+          height: 0.8rem;
+        }
+        p.goods {
+          margin-top: 0.12rem;
+          border-top: 0.01rem solid #FFF;
+          border-bottom: 0.01rem solid #FFF;
+          font-size: 0.18rem;
+          line-height: 0.3rem;
+          position: absolute;
+          right: 0.12rem;
+          top: 0.60rem;
+        }
+        p.discount {
+          font-size: 0.22rem;
+          position: absolute;
+          top: 1.15rem;
+          right: 0.15rem;
+        }
+        img.goods-img {
+          position: absolute;
+          max-height: 2.9rem;
+          max-width: 2.12rem;
+          left: -0.10rem;
           bottom: 0;
         }
       }
-      span.discount {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 1.78rem;
-        height: 0.6rem;
-        line-height: 0.6em;
-        font-size: 1.8rem;
-        color: #FFF;
-      }
-      img.goods {
-        width: 1.8rem;
-        height: 1.24rem;
-        margin-top: 0.05rem;
-        margin-right: 0.1rem;
+      .rectangle {
+        &:first-child {
+          float: left;
+        }
+        &:last-child {
+          float: right;
+        }
+        text-align: center;
+        margin-top: 0.10rem;
+        width: 2.96rem;
+        height: 4.2rem;
+        background-color: #FFF;
+        img {
+          height: 2.96rem;
+        }
+        p {
+          font-size: 0.24rem;
+        }
+        .price {
+          color: @red;
+          font-size: 0.3rem;
+          &:before {
+            content: " ￥";
+            font-size: 0.16px;
+          }
+        }
+        a.link {
+          display: block;
+          width: 100%;
+          height: 0.4rem;
+          background-color: @red;
+          color: #FFF;
+          text-align: center;
+          line-height: 0.4rem;
+          font-size: 0.2rem;
+        }
       }
     }
+  }
+}
+
+.parts-four {
+  .billboards .item {
+    background-color: @pink;
+  }
+  ul li .rectangle-special {
+    background-color: @pink;
   }
 }

@@ -7,7 +7,7 @@ var gulp = require('gulp'),
   uglify = require('gulp-uglify'),
   // clean = require('gulp-clean'),
   // del = require('del'),
-  spritesmith=require('gulp.spritesmith'),
+  // spritesmith=require('gulp.spritesmith'),
   browserSync = require('browser-sync'),
   reload  = browserSync.reload;
 
@@ -34,16 +34,16 @@ gulp.task('minJs', function () {
     .pipe(reload({stream: true}))
 });
 
-gulp.task('sprite', function () {
-  return gulp.src('./images/sp/*.png')
-    .pipe(spritesmith(({
-      imgName: 'sprite.png',
-      cssName: 'sprite.css',
-      padding: 5,
-      algorithm: 'binary-tree'
-    })))
-    .pipe(gulp.dest(srcDir));
-});
+// gulp.task('sprite', function () {
+//   return gulp.src('./images/sp/*.png')
+//     .pipe(spritesmith(({
+//       imgName: 'sprite.png',
+//       cssName: 'sprite.css',
+//       padding: 5,
+//       algorithm: 'binary-tree'
+//     })))
+//     .pipe(gulp.dest(srcDir));
+// });
 
 // gulp.task('clean', function () {
 //   gulp.src(srcDir, { read:false })
