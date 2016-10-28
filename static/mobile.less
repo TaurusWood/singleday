@@ -8,38 +8,15 @@
 @skyBlue: rgb(84,164,235);
 @cyan:rgb(47,210,217);
 
-.color (@color) {
-  a {
+.parts-brand-color(@color) {
+  .titles .inner b {
+    color: @color !important;
+  }
+  .billboards .item {
     background-color: @color;
   }
-  .discount {
-    color: @color;
-  }
-}
-
-.parts-color (@color) {
-  .part-left-only {
-    .titles {
-      .inner {
-        b {
-          color: @color;
-        }
-      }
-    }
-    .part-top {
-      .item {
-        .inner {
-          .info {
-            background-color: @color;
-          }
-        }
-      }
-    }
-    .part-bottom {
-      .rectangle-special {
-        background-color: @color;
-      }
-    }
+  ul li .rectangle-special {
+    background-color: @color;
   }
 }
 
@@ -152,6 +129,30 @@ p {
       height: 1.9rem;
       display: inline-block;
       float: left;
+    }
+  }
+  #buttons {
+    height: 0.26rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 1.8rem;
+    z-index: 100;
+    padding:0.1rem;
+    box-sizing: border-box;
+    i {
+      display: inline-block;
+      float: left;
+      margin-left: 0.3rem;
+      width: 0.1rem;
+      height: 0.1rem;
+      border-radius: 50%;
+      background-color: rgba(128, 128, 128, 0.8);
+    }
+    .on {
+      background-color: @orange;
     }
   }
 }
@@ -349,7 +350,7 @@ p {
     }
   }
   .bottom-ad {
-    margin: 0.2rem -0.2rem -0.2rem;
+    margin: 0.2rem -0.2rem;
     img {
       width: 100%;
       height: 0.9rem;
@@ -508,10 +509,71 @@ p {
 }
 
 .parts-four {
-  .billboards .item {
-    background-color: @pink;
+  .parts-brand-color(@pink);
+}
+.parts-five {
+  .parts-brand-color(@blue)
+}
+.parts-six {
+  .parts-brand-color(@orange)
+}
+.parts-seven {
+  .parts-brand-color(@purple)
+}
+.parts-eight {
+  .parts-brand-color(@scarlet)
+}
+.parts-nine {
+  .parts-brand-color(@apricot)
+}
+.parts-ten {
+  .parts-brand-color(@skyBlue)
+}
+.parts-eleven {
+  .parts-brand-color(@cyan)
+}
+
+.popularity-list {
+  width: 100%;
+  p.title {
+    text-align: center;
+    font-size: 0.36rem;
+    color: @red;
   }
-  ul li .rectangle-special {
-    background-color: @pink;
+  .floor {
+    margin: 0.36rem 0;
+    padding-left: 0.2rem;
+    .square {
+      display: block;
+      width: 1.86rem;
+      height: 2.36rem;
+      float: left;
+      margin-right: 0.2rem;
+      margin-bottom: 0.3rem;
+      text-align: center;
+      text-decoration: none;
+      img.goods {
+        width: 100%;
+        height: 1.86rem;
+        border: 0.02rem solid #cbcbcb;
+        box-sizing: border-box;
+      }
+      span.order {
+        display: inline-block;
+        width: 0.6rem;
+        height: 0.32rem;
+        line-height: 0.32rem;
+        border-radius: 0.16rem;
+        background-color: @red;
+        color: #FFF;
+        font-size: 0.2rem;
+        margin-top: -0.16rem;
+      }
+      p.name {
+        font-size: 0.26rem;
+        color: #3c3c3c;
+        margin: 0.1rem 0;
+      }
+    }
   }
 }
