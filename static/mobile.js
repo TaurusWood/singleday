@@ -6,11 +6,28 @@ window.onload = function () {
   var animated = false;
   var timer;
   // 滑动
+  var lis = document.querySelectorAll('li');
   window.onscroll = function () {
-
+    lazyLoad();
   };
+  function lazyLoad() {
+    var scrollTop = document.body.scrollTop || window.pageYOffset ||document.documentElement.scrollTop;
+    var clientHeight = document.body.clientHeight || document.documentElement.clientHeight;
+    for (var j = 0; j < lis.length; j++) {
+      if (lis[j].offsetTop < scrollTop + clientHeight) {
+        for(var i = 0; i < lis[j].getElementsByTagName('img').length; i++) {
+          if (lis[j].getElementsByTagName('img')[i].getAttribute('data-src')) {
+            lis[j].getElementsByTagName('img')[i].style.backgroundColor = 'blue';
+            lis[j].getElementsByTagName('img')[i].src =lis[j].getElementsByTagName('img')[i].getAttribute('data-src');
+            lis[j].getElementsByTagName('img')[i].removeAttribute('data-src');
+          }
+        }
+      }
+    }
+  }
   var starPositionX;
   box.addEventListener('touchstart', function (event) {
+    box.style.width = 0;
     starPositionX = event.targetTouches[0].pageX;
     stop();
   });
@@ -66,7 +83,7 @@ window.onload = function () {
     }
     animated = true;
     var newLeft = +box.style.left.replace('rem', '') + offset;
-    var time = 300; //   位移总时间
+    var time = 200; //   位移总时间
     var interval = 10; //   位移时间间隔
     var length = offset / (time / interval); // 每次的偏移量
     function go() {

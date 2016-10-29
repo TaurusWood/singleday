@@ -35,6 +35,11 @@ body {
   background-color: rgba(252, 252, 228, 0.7);
   font-family:'PingFang SC','Microsoft YaHei','Hiragino Sans GB',Helvetica,Arial,'Lucida Grande',sans-serif;
   margin: 0;
+  -webkit-overflow-scrolling:touch;// 弹性滚动
+  a {
+    // 移动端a标签点击时的蓝色底色
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  }
 }
 
 header {
@@ -78,6 +83,7 @@ img {
 p {
   margin: 0.02rem 0;
 }
+
 
 // 轮播外框
 .banner {
@@ -350,7 +356,7 @@ p {
     }
   }
   .bottom-ad {
-    margin: 0.2rem -0.2rem;
+    margin: 0 -0.2rem;
     img {
       width: 100%;
       height: 0.9rem;
@@ -363,12 +369,10 @@ p {
   .billboards {
     width: 5.9rem;
     margin: 0.2rem auto;
-    position: relative;
     a.item {
       display: block;
       width: 100%;
       height: 1.32rem;
-      margin-top: 0.2rem;
       color: #FFF;
       .left {
         width: 1.78rem;
@@ -409,7 +413,6 @@ p {
     }
   }
   ul {
-    margin-top: 0.3rem;
     li {
       .rectangle-special {
         padding: 0.1rem;
@@ -534,6 +537,7 @@ p {
 }
 
 .popularity-list {
+  margin-top: 0.3rem;
   width: 100%;
   p.title {
     text-align: center;
