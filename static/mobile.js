@@ -7,11 +7,30 @@ window.onload = function () {
   var timer;
   // 导航栏
   var nav = document.querySelector('#nav');
+  var navDrop = nav.querySelector('#more');
   var initNavTop = nav.offsetTop;
+  navDrop.addEventListener('click', function () {
+    var status = navDrop.getAttribute('data-status');
+    if (status === 'up') {
+      nav.style.height = '1.5rem';
+      navDrop.setAttribute('data-status', 'down');
+      navDrop.innerText = '-';
+    }
+    if (status === 'down') {
+      nav.style.height = '0.5rem';
+      navDrop.setAttribute('data-status', 'up');
+      navDrop.innerText = '+';
+    }
+  });
   // 滑动
   var lis = document.querySelectorAll('li');
   window.onscroll = function () {
     lazyLoad();
+    if (navDrop.getAttribute('data-status') === 'down') {
+      nav.style.height = '0.5rem';
+      navDrop.setAttribute('data-status', 'up');
+      navDrop.innerText = '+';
+    }
   };
   function lazyLoad() {
     var scrollTop = document.body.scrollTop || window.pageYOffset ||document.documentElement.scrollTop;
@@ -20,7 +39,7 @@ window.onload = function () {
       nav.style.position = 'fixed';
       nav.style.marginTop = 0;
     } else {
-      nav.style.position = 'initial';
+      nav.style.position = 'relative';
       nav.style.marginTop = '0.2rem';
     }
     for (var j = 0; j < lis.length; j++) {

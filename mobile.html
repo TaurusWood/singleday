@@ -2,6 +2,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1 maximum-scale=1, minimum-scale=1">
+	<meta name="wap-font-scale" content="no">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
     <script src="./dist/rem.js"></script>
@@ -10,7 +11,7 @@
 <body>
 <header id="top">
 	<div class="billboard">
-		<img src="./images/banner.png" alt="billboard"/>
+		<img src="./images/banner.jpg" alt="billboard"/>
 	</div>
 </header>
 <div id="slider" class="banner">
@@ -20,11 +21,21 @@
 	<i class="square-color br"></i>
 	<div class="box-container">
 		<div id="box" style="left:-6rem">
-			<img src="https://dummyimage.com/640x190/eb8346/ffffff&text=Banner3" class="img">
-			<img src="https://dummyimage.com/640x190/f25096/ffffff&text=Banner1" class="img">
-			<img src="https://dummyimage.com/640x190/72f052/ffffff&text=Banner2" class="img">
-			<img src="https://dummyimage.com/640x190/eb8346/ffffff&text=Banner3" class="img">
-			<img src="https://dummyimage.com/640x190/f25096/ffffff&text=Banner1" class="img">
+			<a href="javascript:void(0);">
+				<img src="https://dummyimage.com/640x190/eb8346/ffffff&text=Banner3" class="img">
+			</a>
+			<a href="javascript:void(0);">
+				<img src="https://dummyimage.com/640x190/f25096/ffffff&text=Banner1" class="img">
+			</a>
+			<a href="javascript:void(0);">
+				<img src="https://dummyimage.com/640x190/72f052/ffffff&text=Banner2" class="img">
+			</a>
+			<a href="javascript:void(0);">
+				<img src="https://dummyimage.com/640x190/eb8346/ffffff&text=Banner3" class="img">
+			</a>
+			<a href="javascript:void(0);">
+				<img src="https://dummyimage.com/640x190/f25096/ffffff&text=Banner1" class="img">
+			</a>
 		</div>
 		<div id="buttons">
 			<i data-index="1" class="on"></i>
@@ -33,9 +44,27 @@
 		</div>
 	</div>
 </div>
-<div class="nav" id="nav"></div>
+<div class="nav" id="nav">
+	<ul>
+		<li><a href="#partsOne">妙品精选</a></li>
+		<li><a href="#partsTwo">热卖Top</a></li>
+		<li><a href="#partsThree">双11秒杀</a></li>
+		<li><a href="#partsFour">品牌女装</a></li>
+		<li class="more" id="more" data-status="up">+</li>
+	</ul>
+	<ul class="dropMenu" id="dropMenu">
+		<li><a href="#partsFive">潮流男装</a></li>
+		<li><a href="#partsSix">亲子母婴</a></li>
+		<li><a href="#partsSeven">鞋靴箱包</a></li>
+		<li><a href="#partsEight">日用美妆</a></li>
+		<li><a href="#partsNine">美食专区</a></li>
+		<li><a href="#partsTen">品质生活</a></li>
+		<li><a href="#partsEleven">科技潮品</a></li>
+		<li><a href="#partsList">人气榜</a></li>
+	</ul>
+</div>
 <div class="container">
-	<div class="parts parts-one">
+	<div id="partsOne" class="parts parts-one">
 		<div class="titles">
 			<i class="rainbow left"></i>
 			<div class="inner">
@@ -57,7 +86,7 @@
 					<div class="leaf">
 						<img src="https://dummyimage.com/295x195/72f052/ffffff&text=Goods" class="goods">
 						<p class="name">卫龙旗舰店</p>
-						<i class="wallet">99</i>
+						<i class="wallet">199</i>
 						<p class="adverting">辣条任你吃</p>
 					</div>
 				</a>
@@ -65,7 +94,7 @@
 					<div class="leaf">
 						<img src="https://dummyimage.com/295x195/72f052/ffffff&text=Goods" class="goods">
 						<p class="name">卫龙旗舰店</p>
-						<i class="wallet">99</i>
+						<i class="wallet">299</i>
 						<p class="adverting">辣条任你吃</p>
 					</div>
 				</a>
@@ -75,7 +104,7 @@
 					<div class="leaf">
 						<img src="https://dummyimage.com/295x195/72f052/ffffff&text=Goods" class="goods">
 						<p class="name">卫龙旗舰店</p>
-						<i class="wallet">99</i>
+						<i class="wallet">399</i>
 						<p class="adverting">辣条任你吃</p>
 					</div>
 				</a>
@@ -83,7 +112,7 @@
 					<div class="leaf">
 						<img src="https://dummyimage.com/295x195/72f052/ffffff&text=Goods" class="goods">
 						<p class="name">卫龙旗舰店</p>
-						<i class="wallet">99</i>
+						<i class="wallet">1299</i>
 						<p class="adverting">辣条任你吃</p>
 					</div>
 				</a>
@@ -146,6 +175,7 @@
 		<ul class="second">
 			<li>
 				<a href="javascript:void(0);">
+					<p class="discount">123132</p>
 					<img src="" data-src="https://dummyimage.com/213x240/72f052/ffffff&text=Goods" class="goods">
 				</a>
 				<a href="javascript:void(0);" class="middle">
@@ -168,7 +198,7 @@
 			</li>
 		</ul>
 	</div>
-	<div class="parts parts-two">
+	<div id="partsTwo" class="parts parts-two">
 		<div class="titles">
 			<i class="rainbow left"></i>
 			<div class="inner">
@@ -354,7 +384,7 @@
 			</li>
 		</ul>
 	</div>
-	<div class="parts parts-three">
+	<div id="partsThree" class="parts parts-three">
 		<div class="titles">
 			<i class="rainbow left"></i>
 			<div class="inner">
@@ -540,7 +570,7 @@
 			</li>
 		</ul>
 	</div>
-	<div class="parts parts-brand parts-four">
+	<div id="partsFour" class="parts parts-brand parts-four">
 		<div class="titles">
 			<i class="rainbow left"></i>
 			<div class="inner">
@@ -676,7 +706,7 @@
 			</li>
 		</ul>
 	</div>
-	<div class="parts parts-brand parts-five">
+	<div id="partsFive" class="parts parts-brand parts-five">
 		<div class="titles">
 			<i class="rainbow left"></i>
 			<div class="inner">
@@ -812,7 +842,7 @@
 			</li>
 		</ul>
 	</div>
-	<div class="parts parts-brand parts-six">
+	<div id="partsSix" class="parts parts-brand parts-six">
 		<div class="titles">
 			<i class="rainbow left"></i>
 			<div class="inner">
@@ -948,7 +978,7 @@
 			</li>
 		</ul>
 	</div>
-	<div class="parts parts-brand parts-seven">
+	<div id="partsSeven" class="parts parts-brand parts-seven">
 		<div class="titles">
 			<i class="rainbow left"></i>
 			<div class="inner">
@@ -1084,7 +1114,7 @@
 			</li>
 		</ul>
 	</div>
-	<div class="parts parts-brand parts-eight">
+	<div id="partsEight" class="parts parts-brand parts-eight">
 		<div class="titles">
 			<i class="rainbow left"></i>
 			<div class="inner">
@@ -1220,7 +1250,7 @@
 			</li>
 		</ul>
 	</div>
-	<div class="parts parts-brand parts-nine">
+	<div id="partsNine" class="parts parts-brand parts-nine">
 		<div class="titles">
 			<i class="rainbow left"></i>
 			<div class="inner">
@@ -1356,7 +1386,7 @@
 			</li>
 		</ul>
 	</div>
-	<div class="parts parts-brand parts-ten">
+	<div id="partsTen" class="parts parts-brand parts-ten">
 		<div class="titles">
 			<i class="rainbow left"></i>
 			<div class="inner">
@@ -1492,7 +1522,7 @@
 			</li>
 		</ul>
 	</div>
-	<div class="parts parts-brand parts-eleven">
+	<div id="partsEleven" class="parts parts-brand parts-eleven">
 		<div class="titles">
 			<i class="rainbow left"></i>
 			<div class="inner">
@@ -1628,8 +1658,12 @@
 			</li>
 		</ul>
 	</div>
-	<div class="popularity-list">
-		<p class="title">人气榜</p>
+	<div id="partsList" class="popularity-list">
+		<p class="title">
+			<i class="line"></i>
+			人气榜
+			<i class="line"></i>
+		</p>
 		<ul class="floor">
 			<li>
 				<a href="javascript:void(0);" class="square">

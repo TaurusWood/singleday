@@ -127,7 +127,7 @@ a[data-id] {
     font-weight: bolder;
     z-index: 100;
     font-size: 40px;
-    line-height: 40px;
+    line-height: 35px;
     text-align: center;
     opacity: 0;
     text-decoration: none;
@@ -215,7 +215,7 @@ a[data-id] {
   .list-bg {
     margin-top: 85px;
     padding: 10px 0;
-    background: url("../images/material/leftBar.png") no-repeat;
+    background: url("../../double11/material/leftBar.png") no-repeat;
     background-size: 100% 100%;
     ul {
       list-style: none;
@@ -232,7 +232,7 @@ a[data-id] {
     }
   }
   .reTop {
-    background: url("../images/material/jiantou.png");
+    background: url("../../double11/material/jiantou.png");
     background-size: 100% 100%;
     position: absolute;
     bottom: 14px;
@@ -255,6 +255,7 @@ a[data-id] {
   width: 140px;
   float: right;
   margin-right: -15px;
+  z-index: 1000;
   .nav-top {
     width: 100%;
     background-color: @red;
@@ -411,7 +412,7 @@ a[data-id] {
         display: block;
         width: 35px;
         height: 40px;
-        background:url("../images/material/hongbao_03.png") no-repeat;
+        background:url("../../double11/material/hongbao_03.png") no-repeat;
         background-size: 100% 100%;
         top: 0;
         right: 10px;
@@ -438,7 +439,7 @@ a[data-id] {
         position: relative;
         width: 270px;
         height: 100%;
-        background: url("../images/material/kuangxiao_03.png");
+        background: url("../../double11/material/kuangxiao_03.png");
         background-size: 100% 100%;
         img {
           width: 264px;
@@ -508,7 +509,7 @@ a[data-id] {
           top: 100px;
           background-color: @red;
         }
-        background: url("../images/material/kuangda_03.png");
+        background: url("../../double11/material/kuangda_03.png");
         background-size: 100% 100%;
       }
     }
@@ -565,6 +566,7 @@ a[data-id] {
       height: 90px;
       img {
         width: 100%;
+        height: 90px;
       }
     }
   }
@@ -598,11 +600,12 @@ a[data-id] {
               height: 95px;
               position: relative;
               img {
-                width: 100%;
-                max-height: 80px;
                 position: absolute;
                 top: 0;
                 bottom: 0;
+                left: 0;
+                right: 0;
+                max-width: 126px;
                 margin: auto;
               }
             }
@@ -626,20 +629,28 @@ a[data-id] {
         margin-top: 10px;
         float: left;
         width: 190px;
-        height: 320px;
+        height: 290px;
         margin-left: 9px;
         background-color: #FFF;
+        position: relative;
         img {
-          height: 230px;
+          height: 190px;
+          width: 190px;
         }
         p {
           margin: 5px 0;
         }
+        p.name {
+          position: relative;
+        }
         .price {
           color: @red;
           font-size: 19px;
+          position: absolute;
+          bottom: 25px;
+          width: 100%;
           &:before {
-            content: " ￥";
+            content: " ¥";
             font-size: 13px;
           }
         }
@@ -652,20 +663,31 @@ a[data-id] {
           text-align: center;
           line-height: 25px;
           font-size: 16px;
+          position: absolute;
+          bottom: 0;
           &:hover {
             text-decoration: none;
           }
         }
       }
       .rectangle-special {
-        //background-color: @pink;
+        a {
+          color: #FFF;
+        }
+        a:hover {
+          color: #FFF;
+        }
+        a:focus {
+          outline: none;
+        }
         padding: 10px;
         position: relative;
         text-align: right;
         color: #FFF;
         img.logo {
           float: right;
-          height: 45px;
+          max-width: 160px;
+          max-height: 47px;
         }
         p.goods {
           margin-top: 12px;
@@ -675,20 +697,29 @@ a[data-id] {
           line-height: 30px;
           position: absolute;
           right: 12px;
-          top: 60px;
+          top: 50px;
+          color: #FFF;
+          max-width: 180px;
+          overflow: hidden;
+          white-space: nowrap;
         }
         p.discount {
-          font-size: 22px;
+          font-size: 20px;
           position: absolute;
-          top: 115px;
+          top: 100px;
           right: 15px;
+          color: #FFF;
         }
         img.goods-img {
           position: absolute;
           max-height: 120px;
-          max-width: 190px;
+          max-width: 175px;
           left: -10px;
           bottom: 0;
+        }
+        img.person-img {
+          max-width: 120px;
+          max-height: 190px;
         }
       }
     }
@@ -718,6 +749,19 @@ a[data-id] {
 }
 .parts-eleven {
   .parts-color(@cyan)
+}
+
+.parts-four, .parts-five {
+  .part-left-only {
+    .part-bottom {
+      .rectangle {
+        height: 330px;
+        img {
+          height: 230px;
+        }
+      }
+    }
+  }
 }
 
 hr.footer-line {

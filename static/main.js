@@ -7,15 +7,6 @@ $(function () {
   var animated = false;
   var timer;
 
-  // function showButton() {
-  //   for (var i = 0; i < buttons.length; i++) {
-  //     if (buttons[i].className == 'on') {
-  //       buttons[i].className = '';
-  //     }
-  //   }
-  //   buttons[index - 1].className = 'on';
-  // }
-
   function animate(offset) {
     if (offset == 0) {
       return;
@@ -71,23 +62,9 @@ $(function () {
     } else {
       index -= 1;
     }
-    // showButton();
     animate(1120);
   };
-  // for (var i = 0; i < buttons.length; i++) {
-  //   buttons[i].onclick = function() {
-  //     if (this.className == 'on') {
-  //       return;
-  //     }
-  //     var myindex = parseInt(this.getAttribute('index'));
-  //     var offset = -600 * (myindex - index);
-  //     index = myindex;
-  //     // showButton();
-  //     if (!animated) {
-  //       animate(offset);
-  //     }
-  //   }
-  // }
+
   slider.onmouseover = stop;
   slider.onmouseout = play;
   play();
@@ -95,6 +72,7 @@ $(function () {
   // 左边栏  右边栏
   var $leftBar = $('#leftBar');
   var $rightBar = $('#rightBar');
+  var eleven = $('#parts-eleven').offset().top;
   $(window).scroll(function(){
     var top = $(window).scrollTop();
     if (top > 900) {
@@ -109,13 +87,19 @@ $(function () {
       })
     }
 
-    if (top > 4800) {
+    if (top > 4756 && top < eleven + 125) {
       $rightBar.parent().css({
         "margin-right": 20
       });
       $rightBar.css({
         "position": "fixed",
-        "top": 110
+        "bottom": "initial",
+        "top": 0
+      });
+    } else if (top >= eleven + 125) {
+      $rightBar.css({
+        "position": "fixed",
+        "top": eleven - top
       });
     } else {
       $rightBar.parent().css({
@@ -123,7 +107,8 @@ $(function () {
       });
       $rightBar.css({
         "position": "relative",
-        "top": "initial"
+        "top": "initial",
+        "bottom": "initial"
       })
     }
   });
@@ -149,20 +134,5 @@ $(function () {
   $arrowUp.closest('.square').on('mouseleave', function () {
     $(this).find('.slide-text').slideUp();
     $(this).find('.arrow-up').fadeIn();
-  });
-
-  $('[data-id]').click(function () {
-    var pid = $(this).data('id');
-    $.ajax({
-      type: 'GET',
-      url: '/miaopin8/statisticalClicks/',
-      data: { id: pid },
-      dataType: 'json',
-      cache: false
-    }).done(function (result) {
-      window.open(result);
-    }).fail(function (err) {
-      console.log(err);
-    })
   });
 });

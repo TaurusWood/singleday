@@ -12,8 +12,13 @@
   .titles .inner b {
     color: @color !important;
   }
-  .billboards .item {
-    background-color: @color;
+  .billboards {
+    li {
+      border: 0.04rem solid @color;
+      .item {
+        background-color: @color;
+      }
+    }
   }
   ul li .rectangle-special {
     background-color: @color;
@@ -43,6 +48,7 @@ body {
 }
 
 header {
+  text-align: center;
   .billboard {
     width: 100%;
     img {
@@ -165,12 +171,41 @@ p {
 
 // 导航栏
 .nav {
+  position: relative;
   width: 100%;
-  background-color: @red;
-  height: 30px;
+  height: 0.5rem;
   margin-top: 0.2rem;
   z-index: 200;
   top: 0;
+  overflow: hidden;
+  transition: height 300ms;
+  ul {
+    .clearfix();
+    background-color: @red;
+    li {
+      margin-top: 0;
+      height: 0.5rem;
+      line-height: 0.5rem;
+      float: left;
+      width: 23%;
+      text-align: center;
+      a {
+        float: initial;
+        text-align: center;
+        font-size: 0.26rem;
+        color: #FFF;
+      }
+    }
+    li.more {
+      width: 8%;
+      font-size: 0.44rem;
+      color: #FFF;
+      margin-left: -0.16rem;
+    }
+  }
+  ul.dropMenu {
+    background-color: rgba(229,36,41, 0.7);
+  }
 }
 .parts {
   width: 6rem;
@@ -227,11 +262,11 @@ p {
       bottom: 0.1rem;
     }
     i.left {
-      background: url("../images/left-rianbow.png") no-repeat;
+      background: url("/static/activity/image/left-rianbow.png") no-repeat;
       background-size: 100% 100%;
     }
     i.right {
-      background: url("../images/right-rainbow.png") no-repeat;
+      background: url("/static/activity/image/right-rainbow.png") no-repeat;
       background-size: 100% 100%;
       right: 0;
     }
@@ -262,15 +297,15 @@ p {
           line-height: 0.3rem;
           background-color: rgba(0,0,0,0.3);
           color: #FFF;
-          font-size: 0.16rem;
-          text-align: center;
+          font-size: 0.26rem;
+          text-indent: 0.76rem;
         }
         i.wallet {
           position: absolute;
-          font-size: 0.12rem;
+          font-size: 0.18rem;
           font-style: normal;
           color: #FFF;
-          background: url('../images/wallet.png') no-repeat;
+          background: url('/static/activity/image/wallet.png') no-repeat;
           background-size: 100% 100%;
           width: .46rem;
           height: .6rem;
@@ -281,9 +316,9 @@ p {
         }
         p.adverting {
           color: @red;
-          font-size: 0.24rem;
+          font-size: 0.2rem;
           margin-top: 0.1rem;
-          margin-left: 0.8rem;
+          text-indent: 0.76rem;
         }
       }
     }
@@ -294,17 +329,44 @@ p {
     li {
       height: 2.13rem;
       a {
+        position: relative;
         width: 33%;
         height: 100%;
         float: left;
+        p.discount {
+          position: absolute;
+          top: .5rem;
+          font-size: 0.22rem;
+          width: 100%;
+          text-align: center;
+          font-weight: 600;
+        }
+        .color1 {
+          color: @blue;
+        }
+        .color2 {
+          color: @purple;
+        }
+        .color3 {
+          color: @orange;
+        }
+        .color4 {
+          color: @skyBlue;
+        }
+        .color5 {
+          color: @pink;
+        }
+        .color6 {
+          color: #3ae430;
+        }
         img {
           width: 100%;
           height: 100%;
         }
       }
       .middle{
-        border-left: 0.01rem solid #cdcdce;
-        border-right: 0.01rem solid #cdcdce;
+        border-left: 0.02rem solid #cdcdce;
+        border-right: 0.02rem solid #cdcdce;
       }
     }
   }
@@ -315,7 +377,7 @@ p {
     li {
       .square {
         width: 2.95rem;
-        height: 3.3rem;
+        height: 3.6rem;
         box-sizing: border-box;
         border: 0.05rem solid #FFF;
         background-color: #FFF;
@@ -343,15 +405,15 @@ p {
           margin: 0 auto;
           left: 0;
           right: 0;
-          bottom: 0.5rem;
+          bottom: 0.8rem;
           font-size: 0.14rem;
           .price {
             font-weight: 600;
-            font-size: 0.26rem;
+            font-size: 0.22rem;
           }
         }
         p.name {
-          font-size: 0.28rem;
+          font-size: 0.22rem;
           margin-top: 0.2rem;
         }
       }
@@ -371,45 +433,54 @@ p {
   .billboards {
     width: 5.9rem;
     margin: 0.2rem auto;
-    a.item {
-      display: block;
-      width: 100%;
+    li {
+      position: relative;
       height: 1.32rem;
-      color: #FFF;
-      .left {
-        width: 1.78rem;
-        height: 100%;
-        float: left;
-        position: relative;
-        .logo {
-          height: 0.72rem;
+      a.item {
+        position: absolute;
+        top: 0.1rem;
+        left: 0.1rem;
+        //margin-top: 0.2rem;
+        //margin-right: -0.2rem;
+        display: block;
+        width: 100%;
+        height: 1.32rem;
+        color: #FFF;
+        .left {
+          width: 1.78rem;
+          height: 100%;
+          float: left;
           position: relative;
-          img {
+          .logo {
+            height: 0.72rem;
+            position: relative;
+            img {
+              position: absolute;
+              top: 0;
+              left: 0;
+              margin: auto;
+            }
+          }
+          span.discount {
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
-            margin: auto;
+            width: 1.78rem;
+            height: 0.6rem;
+            line-height: 0.6rem;
+            font-size: 0.26rem;
+            text-align: center;
+            color: #FFF;
           }
         }
-        span.discount {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 1.78rem;
-          height: 0.6rem;
-          line-height: 0.6rem;
-          font-size: 0.26rem;
-          text-align: center;
-          color: #FFF;
-        }
-      }
-      .right {
-        img.goods {
-          width: 1.8rem;
-          height: 1.24rem;
-          margin-top: 0.05rem;
-          margin-right: 0.1rem;
-          float: left;
+        .right {
+          img.goods {
+            width: 1.8rem;
+            height: 1.24rem;
+            margin-top: 0.03rem;
+            margin-right: 0.1rem;
+            float: left;
+          }
         }
       }
     }
@@ -457,6 +528,9 @@ p {
           position: absolute;
           right: 0.12rem;
           top: 0.60rem;
+          max-width: 2.6rem;
+          white-space: nowrap;
+          overflow: hidden;
         }
         p.discount {
           font-size: 0.22rem;
@@ -482,8 +556,9 @@ p {
         text-align: center;
         margin-top: 0.10rem;
         width: 2.96rem;
-        height: 4.2rem;
+        height: 4.5rem;
         background-color: #FFF;
+        position: relative;
         img {
           height: 2.96rem;
         }
@@ -492,21 +567,26 @@ p {
         }
         .price {
           color: @red;
-          font-size: 0.3rem;
+          font-size: 0.28rem;
+          position: absolute;
+          width: 100%;
+          bottom: 0.4rem;
           &:before {
-            content: " ￥";
+            content: " ¥";
             font-size: 0.16px;
           }
         }
         a.link {
           display: block;
           width: 100%;
-          height: 0.4rem;
+          height: .4rem;
           background-color: @red;
           color: #FFF;
           text-align: center;
-          line-height: 0.4rem;
-          font-size: 0.2rem;
+          line-height: .4rem;
+          font-size: .2rem;
+          bottom: 0;
+          position: absolute;
         }
       }
     }
@@ -545,10 +625,27 @@ p {
     text-align: center;
     font-size: 0.36rem;
     color: @red;
+    position: relative;
+    margin: 0.2rem;
+    .line {
+      display: block;
+      position: absolute;
+      width: 2.4rem;
+      height: 0.04rem;
+      top: 0.24rem;
+      background-color: @red;
+      &:nth-child(1) {
+        left: 0;
+      }
+      &:nth-child(2) {
+        right: 0;
+      }
+    }
   }
   .floor {
-    margin: 0.36rem 0;
+    margin: 0.36rem auto;
     padding-left: 0.2rem;
+    max-width: 6.4rem;
     .square {
       display: block;
       width: 1.86rem;
