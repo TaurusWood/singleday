@@ -72,6 +72,26 @@ gulp.task('mobile', ['styles', 'minJs', 'watch'], function () {
 });
 
 
+gulp.task('miniPc', ['styles', 'minJs', 'watch'], function () {
+  browserSync({
+    files: "./miniSixteen.html",
+    server: {
+      baseDir: "./",
+      index: "./miniSixteen.html"
+    }
+  });
+});
+
+gulp.task('miniMobile', ['styles', 'minJs', 'watch'], function () {
+  browserSync({
+    files: "./miniSixteenM.html",
+    server: {
+      baseDir: "./",
+      index: "./miniSixteenM.html"
+    }
+  });
+});
+
 gulp.task('watch', ['styles'], function () {
   gulp.watch(srcDir + '*.less', function () {
     gulp.run('styles');

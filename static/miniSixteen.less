@@ -1,0 +1,175 @@
+/**
+ * Created by Imp on 2016/11/3.
+ */
+@red: rgb(229,36,41);
+.clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+body {
+  background-color: rgba(252, 252, 228, 0.7);
+  font-family: "微软雅黑";
+}
+
+header {
+  text-align: center;
+  .billboard img{
+    width: 100%;
+    min-width: 1440px;
+  }
+}
+a:focus {
+  outline: none;
+}
+
+#content {
+  width: 1155px;
+  margin: 0 auto;
+  section {
+    margin-left: -8px;
+  }
+}
+
+.parts {
+  margin-top: -150px;
+  text-align: center;
+  width: 100%;
+  .titles {
+    position: relative;
+    margin: 0 auto;
+    width: 380px;
+    .inner {
+      position: relative;
+      display: inline-block;
+      width: 210px;
+      height: 45px;
+      b {
+        font-size: 37px;
+        line-height: 45px;
+        font-weight: 500;
+        color: @red;
+      }
+      .angle {
+        position: absolute;
+        i {
+          display: block;
+          background-color: rgb(247,209,190);
+        }
+        i.vertical {
+          width: 4px;
+          height: 20px;
+        }
+        i.across {
+          width: 20px;
+          height: 4px;
+        }
+      }
+      .top {
+        top: 0;
+        left: 0;
+      }
+      .bottom {
+        bottom: 0;
+        right: 0;
+        .vertical {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
+      }
+    }
+    img {
+      width: 70px;
+      position: absolute;
+      bottom: 0;
+      &:first-child {
+        left: 0;
+      }
+      &:last-child {
+        right: 0;
+      }
+    }
+  }
+}
+
+.parts-two {
+  .square {
+    position: relative;
+    margin-top: 20px;
+    a {
+      display: block;
+      width: 276px;
+      height: 276px;
+      border: 2px solid rgb(255,248,227);
+      &:hover {
+        border: 2px solid @red;
+      }
+      img.goods {
+        width: 100%;
+      }
+      img.arrow-up {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+    }
+    .slide-text {
+      display: none;
+      height: 80px;
+      width: 276px;
+      background-color: rgba(255,255,255,0.7);
+      position: absolute;
+      z-index: 20;
+      bottom: 0;
+      padding: 15px 5px;
+      .keywords {
+        overflow: hidden;
+        width: 100%;
+        white-space: nowrap;
+      }
+      .discount {
+        color: @red;
+        font-weight: 600;
+        .price {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+hr.footer-line {
+  border: 2px solid rgb(194,193,191);
+  margin-top: 70px;
+  margin-bottom: 0;
+}
+
+footer {
+  padding: 20px 0;
+  background-color: #FFF;
+  p.company-info span {
+    margin-right: 40px;
+  }
+  p.police {
+    a {
+      margin-right: 10px;
+    }
+  }
+  p.copyright {
+
+  }
+  p.websiter {
+    margin-top: 10px;
+    img {
+      margin-right: 60px;
+    }
+  }
+}
